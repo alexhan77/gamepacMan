@@ -18,21 +18,21 @@
 	}
 
 	map = [ 
-		[1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1], 
+		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], 
 		[1,6,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,6,1], 
 		[1,2,1,1,1,2,2,1,2,1,1,1,5,1,1,1,2,1,2,2,1,1,1,2,1], 
 		[1,2,1,7,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,7,1,2,1], 
 		[1,2,1,2,1,2,1,1,2,1,1,1,1,1,1,1,2,1,1,2,1,2,1,2,1], 
 		[1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,1], 
-		[1,2,1,2,1,2,2,1,2,2,1,1,3,1,1,2,2,1,2,2,1,2,1,2,1], 
-        [2,2,1,1,1,2,1,1,1,2,1,3,3,3,1,2,1,1,1,2,1,1,1,2,2], 
-        [1,2,1,2,1,2,2,1,2,2,1,3,3,3,1,2,2,1,2,2,1,2,1,2,1],
+		[1,2,1,2,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1], 
+        [1,2,1,1,1,2,1,1,1,2,1,1,2,1,1,2,1,1,1,2,1,1,1,2,1], 
+        [1,2,1,2,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1],
         [1,2,2,2,1,2,2,2,2,1,1,1,1,1,1,1,2,2,2,2,1,2,2,2,1],
         [1,2,1,2,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,2,1,2,1],
         [1,2,1,7,2,2,2,1,2,2,2,2,1,2,2,2,2,1,2,2,2,7,1,2,1],
         [1,2,1,1,1,2,2,1,2,1,1,1,1,1,1,1,2,1,2,2,1,1,1,2,1],
         [1,6,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,6,1],
-        [1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 	]
 // grabbing the element 
 	var el = document.getElementById('world');
@@ -105,7 +105,7 @@ document.onkeydown = function(e){
 		console.log(map)
 	}
 
-	// Moving the evilMorty
+	// Moving the evilMorty functions
 
 	document.onkeyup = function(e){
 		console.log('here')
@@ -113,92 +113,53 @@ document.onkeydown = function(e){
 			// Move an "x" direction
 			if (Math.random() > .5){
 				// Right
-				console.log('right')
+				if ( map[evilMorty.y][evilMorty.x+1] !== 1){
+					map[evilMorty.y][evilMorty.x] = 2;
+					evilMorty.x = evilMorty.x + 1;
+					map[evilMorty.y][evilMorty.x] = 4;
+					drawWorld();
+				}
+				// console.log('right')
 			}
 			else {
 				// Left
-				console.log('left')
+				
 				if ( map[evilMorty.y][evilMorty.x-1] !== 1){
-					map[evilMorty.y][evilMorty.x] = 3;
+					map[evilMorty.y][evilMorty.x] = 2;
 					evilMorty.x = evilMorty.x - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
+					drawWorld();
 				}
+				// console.log('left')
 			}
 		}
 		else {
 			// Move to "y" direction
-			if (Math.random() > .5){
+			if (Math.random() > .5) {
+				// Up
 				if ( map[evilMorty.y-1][evilMorty.x] !== 1){
-					map[evilMorty.y][evilMorty.x] = 3;
+					map[evilMorty.y][evilMorty.x] = 2;
 					evilMorty.y = evilMorty.y - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
 					drawWorld();
 				}
 				
-				console.log('up')
+				// console.log('up')
 			}
 			else {
 				// Down
-				console.log('down')
+				if ( map[evilMorty.y+1][evilMorty.x] !== 1){
+					map[evilMorty.y][evilMorty.x] = 2;
+					evilMorty.y = evilMorty.y + 1;
+					map[evilMorty.y][evilMorty.x] = 4;
+					drawWorld();
+				}
+				// console.log('down')
 			}
+			drawWorld();
 		}
-		// drawWorld();
+
 	}
-
-		// console.log(e);
-		// if (e.keyCode === 37){ 
-		// 	if ( map[evilMorty.y][evilMorty.x-1] !== 1){
-		// 		map[evilMorty.y][evilMorty.x] = 3;
-		// 		evilMorty.x = evilMorty.x - 1;
-		// 		map[evilMorty.y][evilMorty.x] = 5;
-		// 	}
-		// }
-	// 	else if (e.keyCode === 38){ 
-	// 		if ( map[evilMorty.y-1][evilMorty.x] !== 1){
-	// 			map[evilMorty.y][evilMorty.x] = 3;
-	// 			evilMorty.y = evilMorty.y - 1;
-	// 			map[evilMorty.y][evilMorty.x] = 5;
-	// 			drawWorld();
-	// 		}
-	// 	}
-	// 	else if (e.keyCode === 39){
-	// 		if ( map[evilMorty.y][evilMorty.x+1] !== 1){
-	// 			map[evilMorty.y][evilMorty.x] = 3;
-	// 			evilMorty.x = evilMorty.x + 1;
-	// 			map[evilMorty.y][evilMorty.x] = 5;
-	// 			drawWorld();
-	// 		}
-	// 	}
-	// 	else if (e.keyCode === 40){ 
-	// 		if ( map[evilMorty.y+1][evilMorty.x] !== 1){
-	// 			map[evilMorty.y][evilMorty.x] = 3;
-	// 			evilMorty.y = evilMorty.y + 1;
-	// 			map[evilMorty.y][evilMorty.x] = 5;
-	// 			drawWorld();
-	// 		}
-	// 	}
-	// 	console.log(map)
-	// }
-	// const movementHandler = (e) => {
-	// 	// w = 87, a = 65, s = 83, d = 68
-	// 	switch (e.keyCode) {
-	// 		case (87): 
-	// 			console.log(e.keyCode)
-	// 			evilMorty.y -= 10 
-	// 			break
-	// 		case (65):
-	// 			evilMorty.x -= 10
-	// 			break
-	// 		case (83):
-	// 			evilMorty.y += 10
-	// 			break
-	// 		case (68):
-	// 			evilMorty.x += 10
-	// 			break
-	// 	}
-	// }
+    rick.FPS = 30;
 	
-
-    // rick.FPS = 30;
-	
-    drawWorld()
+    drawWorld();
