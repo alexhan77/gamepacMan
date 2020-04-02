@@ -1,6 +1,6 @@
-* {
+/* * {
     outline: 1px dotted solid black;
-}
+} */
 
 .wall {
     width: 50px;
@@ -30,7 +30,7 @@
     width: 50px;
     height: 50px;
     background: url('rick.png');
-    display: inline-block;`
+    display: inline-block;
 }
 .portal {
     width: 50px;
@@ -53,7 +53,7 @@ div {
 h1 {
     text-align: center;
     font-family: 'Amatic SC', cursive;
-    font-size: 1em;
+    font-size: 2em;
 }
 
 body {
@@ -63,5 +63,5 @@ body {
 
 .container {
     height: 45vh;
-    padding: 2em;
+    padding: 3em;
 }

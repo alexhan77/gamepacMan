@@ -1,22 +1,23 @@
 	// 	1 => <div class='wall'></div>
 	// 2 => <div class='coin'></div>
 	// 3 => <div class='ground'></div>
-	// 4 => <div class='ghost'></div>
-	// 5 => <div class='pacman'></div>
+	// 4 => <div class='evilMorty'></div>
+	// 5 => <div class='rick'></div>
 	// map = [ 1, 2, 3 ]
 	// map = [ [1,2,3], [1,2,3], [1,2,3] ];
     
+	// var currentRick = rick
 
-    // Where Rick starts
+	// Where Rick starts
 	rick = {
 		x: 12,
 		y: 2,
 	}
+
 	evilMorty = {
 		x: 12,
 		y: 7,
 	}
-
 	map = [ 
 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], 
 		[1,6,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,6,1], 
@@ -25,7 +26,7 @@
 		[1,2,1,2,1,2,1,1,2,1,1,1,1,1,1,1,2,1,1,2,1,2,1,2,1], 
 		[1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,1], 
 		[1,2,1,2,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1], 
-        [1,2,1,1,1,2,1,1,1,2,1,1,2,1,1,2,1,1,1,2,1,1,1,2,1], 
+        [1,2,1,1,1,2,1,1,1,2,2,2,4,2,2,2,1,1,1,2,1,1,1,2,1], 
         [1,2,1,2,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1],
         [1,2,2,2,1,2,2,2,2,1,1,1,1,1,1,1,2,2,2,2,1,2,2,2,1],
         [1,2,1,2,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,2,1,2,1],
@@ -102,13 +103,13 @@ document.onkeydown = function(e){
 				drawWorld();
 			}
 		}
-		console.log(map)
+		console.log(rick.y +'+'+ rick.x)
 	}
 
 	// Moving the evilMorty functions
 
 	document.onkeyup = function(e){
-		console.log('here')
+		console.log(map[rick.x][rick.y])
 		if (Math.random() > .5){
 			// Move an "x" direction
 			if (Math.random() > .5){
@@ -160,6 +161,11 @@ document.onkeydown = function(e){
 		}
 
 	}
+
+	// Moving rick from one portal to another
+
+
     rick.FPS = 30;
 	
-    drawWorld();
+	drawWorld();
+	
