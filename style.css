@@ -1,0 +1,63 @@
+* {
+    outline: 1px dotted solid black;
+}
+
+.wall {
+    width: 50px;
+    height: 50px;
+    background-image: url('wall.png');
+    display: inline-block;
+}
+.coin {
+    width: 50px;
+    height: 50px;
+    background-image: url('coin.png');
+    display: inline-block;
+}
+.ground {
+    width: 50px;
+    height: 50px;
+    background-image: url('ground.png');
+    display: inline-block;
+}
+.evilMorty {
+    width: 50px;
+    height: 50px;
+    background-image: url('evilMorty.png');
+    display: inline-block;
+}
+.rick {
+    width: 50px;
+    height: 50px;
+    background: url('rick.png');
+    display: inline-block;
+}
+.portal {
+    width: 50px;
+    height: 50px;
+    background-image: url('portal.png');
+    display: inline-block;
+}
+.beer {
+    width: 50px;
+    height: 50px;
+    background-image: url('beer.png');
+    display: inline-block;
+}
+div {
+    line-height: 0px;
+    margin: -2px;
+    vertical-align: top;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 200px;
+}
+
+body {
+    background: peachpuff;
+    text-align: center;
+}
+
