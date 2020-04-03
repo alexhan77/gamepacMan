@@ -18,6 +18,22 @@
 		x: 12,
 		y: 7,
 	}
+	topLeft = {
+		x: 1,
+		y: 1,
+	}
+	bottomLeft = {
+		x: 13,
+		y: 1,
+	}
+	topRight = {
+		x: 1,
+		y: 23,
+	}
+	bottomRight = {
+		x: 13,
+		y: 23,
+	}
 	map = [ 
 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], 
 		[1,6,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,6,1], 
@@ -72,41 +88,46 @@
 document.onkeydown = function(e){
 		// console.log(e);
 		if (e.keyCode === 37){ // RICK MOVE LEFT
+			portal()
 			if ( map[rick.y][rick.x-1] !== 1){
 				map[rick.y][rick.x] = 3;
 				rick.x = rick.x - 1;
 				map[rick.y][rick.x] = 5;
-				drawWorld();
+				// drawWorld();
 			}
 		}
 		else if (e.keyCode === 38){ // RICK MOVE UP
+			portal()
 			if ( map[rick.y-1][rick.x] !== 1){
 				map[rick.y][rick.x] = 3;
 				rick.y = rick.y - 1;
 				map[rick.y][rick.x] = 5;
-				drawWorld();
+				// drawWorld();
 			}
 		}
 		else if (e.keyCode === 39){ // RICK MOVE RIGHT
+			portal()
 			if ( map[rick.y][rick.x+1] !== 1){
 				map[rick.y][rick.x] = 3;
 				rick.x = rick.x + 1;
 				map[rick.y][rick.x] = 5;
-				drawWorld();
+				// drawWorld();
 			}
 		}
 		else if (e.keyCode === 40){ // RICK MOVE DOWN
+			portal()
 			if ( map[rick.y+1][rick.x] !== 1){
 				map[rick.y][rick.x] = 3;
 				rick.y = rick.y + 1;
 				map[rick.y][rick.x] = 5;
-				drawWorld();
+				// drawWorld();
 			}
 		}
 		console.log(rick.y +'+'+ rick.x)
 	}
 
 	// Moving the evilMorty functions
+	// 
 
 	document.onkeyup = function(e){
 		console.log(map[rick.x][rick.y])
@@ -118,7 +139,7 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 2;
 					evilMorty.x = evilMorty.x + 1;
 					map[evilMorty.y][evilMorty.x] = 4;
-					drawWorld();
+					// drawWorld();
 				}
 				// console.log('right')
 			}
@@ -129,7 +150,7 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 2;
 					evilMorty.x = evilMorty.x - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
-					drawWorld();
+					// drawWorld();
 				}
 				// console.log('left')
 			}
@@ -142,7 +163,7 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 2;
 					evilMorty.y = evilMorty.y - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
-					drawWorld();
+					// drawWorld();
 				}
 				
 				// console.log('up')
@@ -153,7 +174,7 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 2;
 					evilMorty.y = evilMorty.y + 1;
 					map[evilMorty.y][evilMorty.x] = 4;
-					drawWorld();
+					// drawWorld();
 				}
 				// console.log('down')
 			}
@@ -163,9 +184,14 @@ document.onkeydown = function(e){
 	}
 
 	// Moving rick from one portal to another
+	function portal() {
+		if (map[rick.y] === 1&& map[rick.x] === 1) {
+			map[rick.y] = 13;
+			map[rick.x] = 23;
+		}
+	}
 
-
-    rick.FPS = 30;
+    
 	
 	drawWorld();
 	
