@@ -15,10 +15,9 @@
 		x: 12,
 		y: 2,
 	}
-
 	evilMorty = {
 		x: 12,
-		y: 7,
+		y: 12,
 	}
 	topLeft = {
 		x: 1,
@@ -38,19 +37,19 @@
 	}
 	map = [ 
 		[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], 
-		[1,6,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,6,1], 
-		[1,2,1,1,1,2,2,1,2,1,1,1,5,1,1,1,2,1,2,2,1,1,1,2,1], 
-		[1,2,1,7,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,7,1,2,1], 
-		[1,2,1,2,1,2,1,1,2,1,1,1,1,1,1,1,2,1,1,2,1,2,1,2,1], 
-		[1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,1], 
-		[1,2,1,2,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1], 
-        [1,2,1,1,1,2,1,1,1,2,2,2,4,2,2,2,1,1,1,2,1,1,1,2,1], 
-        [1,2,1,2,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,2,1,2,1,2,1],
-        [1,2,2,2,1,2,2,2,2,1,1,1,1,1,1,1,2,2,2,2,1,2,2,2,1],
-        [1,2,1,2,1,2,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,2,1,2,1],
-        [1,2,1,7,2,2,2,1,2,2,2,2,1,2,2,2,2,1,2,2,2,7,1,2,1],
-        [1,2,1,1,1,2,2,1,2,1,1,1,1,1,1,1,2,1,2,2,1,1,1,2,1],
-        [1,6,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,6,1],
+		[1,6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6,1], 
+		[1,2,2,2,2,2,2,2,2,2,2,2,5,2,2,2,2,2,2,2,2,2,2,2,1], 
+		[1,2,2,7,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,7,2,2,1], 
+		[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1], 
+		[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1], 
+		[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1], 
+        [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1], 
+        [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
+        [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
+        [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
+        [1,2,2,7,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,7,2,2,1],
+        [1,2,2,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,2,2,2,1],
+        [1,6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6,1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 	]
 // grabbing the element 
@@ -92,25 +91,17 @@
 document.onkeydown = function(e){
 		// console.log(e);
 		if (e.keyCode === 37){ // RICK MOVE LEFT
-			portal()
+			// portal()
 			if ( map[rick.y][rick.x-1] !== 1){
 				map[rick.y][rick.x] = 3;
 				rick.x = rick.x - 1;
 				map[rick.y][rick.x] = 5;
-				// drawWorld();
-			}
-		}
-		else if (e.keyCode === 38){ // RICK MOVE UP
-			portal()
-			if ( map[rick.y-1][rick.x] !== 1){
-				map[rick.y][rick.x] = 3;
-				rick.y = rick.y - 1;
-				map[rick.y][rick.x] = 5;
+				updateScore()
 				// drawWorld();
 			}
 		}
 		else if (e.keyCode === 39){ // RICK MOVE RIGHT
-			portal()
+			// portal()
 			if ( map[rick.y][rick.x+1] !== 1){
 				map[rick.y][rick.x] = 3;
 				rick.x = rick.x + 1;
@@ -118,8 +109,17 @@ document.onkeydown = function(e){
 				// drawWorld();
 			}
 		}
+		else if (e.keyCode === 38){ // RICK MOVE UP
+			// portal()
+			if ( map[rick.y-1][rick.x] !== 1){
+				map[rick.y][rick.x] = 3;
+				rick.y = rick.y - 1;
+				map[rick.y][rick.x] = 5;
+				// drawWorld();
+			}
+		}
 		else if (e.keyCode === 40){ // RICK MOVE DOWN
-			portal()
+			// portal()
 			if ( map[rick.y+1][rick.x] !== 1){
 				map[rick.y][rick.x] = 3;
 				rick.y = rick.y + 1;
@@ -128,20 +128,20 @@ document.onkeydown = function(e){
 			}
 		}
 		// Finding cordinates in console
-		console.log(rick.y +'+'+ rick.x)
+		console.log('rick coordinates'+ rick.y +''+ rick.x)
+		
 	}
 
 // Moving the evilMorty functions
 
 	document.onkeyup = function(e){
 		// check if i am able to move in the "x" direction
-		console.log(map[rick.x][rick.y])
 		if (Math.random() > .5){
 			// Move an "x" direction
 			if (Math.random() > .5){
 				// Right
 				if ( map[evilMorty.y][evilMorty.x+1] !== 1){
-					map[evilMorty.y][evilMorty.x] = 2;
+					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.x = evilMorty.x + 1;
 					map[evilMorty.y][evilMorty.x] = 4;
 					// drawWorld();
@@ -152,7 +152,7 @@ document.onkeydown = function(e){
 				// Left
 				
 				if ( map[evilMorty.y][evilMorty.x-1] !== 1){
-					map[evilMorty.y][evilMorty.x] = 2;
+					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.x = evilMorty.x - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
 					// drawWorld();
@@ -166,7 +166,7 @@ document.onkeydown = function(e){
 			if (Math.random() > .5) {
 				// Up
 				if ( map[evilMorty.y-1][evilMorty.x] !== 1){
-					map[evilMorty.y][evilMorty.x] = 2;
+					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.y = evilMorty.y - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
 					// drawWorld();
@@ -177,7 +177,7 @@ document.onkeydown = function(e){
 			else {
 				// Down
 				if ( map[evilMorty.y+1][evilMorty.x] !== 1){
-					map[evilMorty.y][evilMorty.x] = 2;
+					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.y = evilMorty.y + 1;
 					map[evilMorty.y][evilMorty.x] = 4;
 					// drawWorld();
@@ -188,14 +188,27 @@ document.onkeydown = function(e){
 		}
 
 	}
-
-	// Moving rick from one portal to another
-	function portal() {
-		if (map[rick.y] === 1&& map[rick.x] === 1) {
-			map[rick.y] = 13;
-			map[rick.x] = 23;
+	// game over function 
+	var rickScore = 0
+	function updateScore() {
+		if (map[rick.y][rick.x] == 2) {
+			rickScore++
+			console.log('score',rickScore)
 		}
+		
+		
 	}
 
-	drawWorld();
+
+
+
+
+	// Moving rick from one portal to another
+	// function portal() {
+	// 	if (map[rick.y] === 1&& map[rick.x] === 1) {
+	// 		map[rick.y] = 13;
+	// 		map[rick.x] = 23;
+	// 	}
+	// }
+drawWorld()
 	
