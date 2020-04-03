@@ -49,7 +49,7 @@
         [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
         [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
         [1,2,2,7,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,7,2,2,1],
-        [1,2,2,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,2,2,2,1],
+        [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
         [1,6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6,1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 	]
@@ -122,7 +122,7 @@ document.onkeydown = function(e){
 			}
 			else if (map[rick.y][rick.x+1] == 7){
 				rickScore += 10
-				console.log('score',rickScore)
+				// console.log('score',rickScore)
 			}
 			}
 		}
@@ -139,7 +139,7 @@ document.onkeydown = function(e){
 				}
 				else if (map[rick.y-1][rick.x] == 7){
 					rickScore += 10
-					console.log('score',rickScore)
+					// console.log('score',rickScore)
 				}
 			}
 		}
@@ -157,7 +157,7 @@ document.onkeydown = function(e){
 			}
 			else if (map[rick.y+1][rick.x] == 7){
 				rickScore += 10
-				console.log('score',rickScore)
+				// console.log('score',rickScore)
 			}
 			}
 	
