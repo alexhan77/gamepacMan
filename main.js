@@ -101,6 +101,10 @@ document.onkeydown = function(e){
 				rickScore++
 				// console.log('score',rickScore)
 			}
+			else if (map[rick.y][rick.x-1] == 7){
+				rickScore += 10
+				console.log('score',rickScore)
+			}
 				// updateScore()
 				// drawWorld();
 		}
@@ -115,7 +119,10 @@ document.onkeydown = function(e){
 					rickScore++
 					// console.log('score',rickScore)
 				// drawWorld();
-				
+			}
+			else if (map[rick.y][rick.x+1] == 7){
+				rickScore += 10
+				console.log('score',rickScore)
 			}
 			}
 		}
@@ -130,6 +137,10 @@ document.onkeydown = function(e){
 					// console.log('score',rickScore)
 				// drawWorld();
 				}
+				else if (map[rick.y-1][rick.x] == 7){
+					rickScore += 10
+					console.log('score',rickScore)
+				}
 			}
 		}
 		else if (e.keyCode === 40){ // RICK MOVE DOWN
@@ -142,6 +153,11 @@ document.onkeydown = function(e){
 					rickScore++
 					// console.log('score',rickScore)
 				// drawWorld();
+				
+			}
+			else if (map[rick.y+1][rick.x] == 7){
+				rickScore += 10
+				console.log('score',rickScore)
 			}
 			}
 	
@@ -232,4 +248,4 @@ document.onkeydown = function(e){
 	// 		map[rick.x] = 23;
 	// 	}
 	// }
-	drawWorld()
+	drawWorld();
