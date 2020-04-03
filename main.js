@@ -99,11 +99,11 @@ document.onkeydown = function(e){
 				map[rick.y][rick.x] = 5;
 			if	(map[rick.y][rick.x-1] == 2){
 				rickScore++
-				console.log('score',rickScore)
+				// console.log('score',rickScore)
 			}
 				// updateScore()
 				// drawWorld();
-			}
+		}
 		}
 		else if (e.keyCode === 39){ // RICK MOVE RIGHT
 			// portal()
@@ -111,7 +111,12 @@ document.onkeydown = function(e){
 				map[rick.y][rick.x] = 3;
 				rick.x = rick.x + 1;
 				map[rick.y][rick.x] = 5;
+				if	(map[rick.y][rick.x+1] == 2){
+					rickScore++
+					// console.log('score',rickScore)
 				// drawWorld();
+				
+			}
 			}
 		}
 		else if (e.keyCode === 38){ // RICK MOVE UP
@@ -120,7 +125,11 @@ document.onkeydown = function(e){
 				map[rick.y][rick.x] = 3;
 				rick.y = rick.y - 1;
 				map[rick.y][rick.x] = 5;
+				if	(map[rick.y-1][rick.x] == 2){
+					rickScore++
+					// console.log('score',rickScore)
 				// drawWorld();
+				}
 			}
 		}
 		else if (e.keyCode === 40){ // RICK MOVE DOWN
@@ -129,13 +138,20 @@ document.onkeydown = function(e){
 				map[rick.y][rick.x] = 3;
 				rick.y = rick.y + 1;
 				map[rick.y][rick.x] = 5;
+				if	(map[rick.y+1][rick.x] == 2){
+					rickScore++
+					// console.log('score',rickScore)
 				// drawWorld();
 			}
-		}
+			}
+	
 		// Finding cordinates in console
 		console.log('rick coordinates'+ rick.y +''+ rick.x)
 		
+		}
 	}
+		
+		
 
 // Moving the evilMorty functions
 
@@ -193,6 +209,7 @@ document.onkeydown = function(e){
 		}
 
 	}
+
 	// game over function 
 	// function rickScore 
 	// function updateScore() {
@@ -215,5 +232,4 @@ document.onkeydown = function(e){
 	// 		map[rick.x] = 23;
 	// 	}
 	// }
-drawWorld();
-	
+	drawWorld()
