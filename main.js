@@ -3,11 +3,13 @@
 	// 3 => <div class='ground'></div>
 	// 4 => <div class='evilMorty'></div>
 	// 5 => <div class='rick'></div>
+	// 6 => <div class='portal'></div>
+	// 7 => <div class='beer'></div>
 	// map = [ 1, 2, 3 ]
 	// map = [ [1,2,3], [1,2,3], [1,2,3] ];
     
 	// var currentRick = rick
-
+	
 	// Where Rick starts
 	rick = {
 		x: 12,
@@ -85,6 +87,8 @@
 		}
 	}
 
+// RICKS MOVEMENTS
+
 document.onkeydown = function(e){
 		// console.log(e);
 		if (e.keyCode === 37){ // RICK MOVE LEFT
@@ -123,13 +127,14 @@ document.onkeydown = function(e){
 				// drawWorld();
 			}
 		}
+		// Finding cordinates in console
 		console.log(rick.y +'+'+ rick.x)
 	}
 
-	// Moving the evilMorty functions
-	// 
+// Moving the evilMorty functions
 
 	document.onkeyup = function(e){
+		// check if i am able to move in the "x" direction
 		console.log(map[rick.x][rick.y])
 		if (Math.random() > .5){
 			// Move an "x" direction
@@ -155,7 +160,8 @@ document.onkeydown = function(e){
 				// console.log('left')
 			}
 		}
-		else {
+			else {
+			// check if i am able to move in the "y" direction
 			// Move to "y" direction
 			if (Math.random() > .5) {
 				// Up
@@ -191,7 +197,5 @@ document.onkeydown = function(e){
 		}
 	}
 
-    
-	
 	drawWorld();
 	
