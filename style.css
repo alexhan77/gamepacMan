@@ -58,7 +58,7 @@ h1 {
 }
 
 body {
-    background:white;
+    background: black;
     text-align: center;
 }
 
@@ -71,5 +71,5 @@ h2 {
 }
 .score {
     padding: 2em;
-    
+    color: peachpuff;
 }
