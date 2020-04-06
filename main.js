@@ -12,6 +12,7 @@
 	var rickScore = 0
 	var mortyScore = 0
 	// Where Rick starts
+	
 	rick = {
 		x: 12,
 		y: 2,
@@ -53,9 +54,22 @@
         [1,6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6,1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 	]
+
 // grabbing the element 
 	var el = document.getElementById('world');
-	
+		let endGame = (rickScore, mortyScore) => {
+			console.log(rickScore)
+			if(rickScore >= 50 || mortyScore >= 50) {
+				alert("YOU WIN");
+				// REFRESHES PAGE AFTER YOU CLICK OK
+				document.location.reload();
+// synchronous is happening right when the computer see the line of code
+// asynchronous doesnt necessary happen when the computer see the line of code
+// Happens when it finishes doing its "job"
+// Usually occurs with API calls (library codes)
+				// clearInterval(interval);
+}
+	}
 	function drawWorld() {
 		el.innerHTML = '';
 		for(var y = 0; y < map.length ; y = y + 1) {
@@ -107,7 +121,7 @@ document.onkeydown = function(e){
 			}
 				// updateScore()
 				// drawWorld();
-		}
+			}
 		}
 		else if (e.keyCode === 39){ // RICK MOVE RIGHT
 			// portal()
@@ -251,9 +265,17 @@ document.onkeydown = function(e){
 				// console.log('down')
 			}
 			drawWorld();
+			document.getElementById('rickScore').innerHTML = rickScore
+			document.getElementById('mortyScore').innerHTML = mortyScore
+
+			endGame(rickScore, mortyScore);
 		}
 	}
-	}
+}
+
+
+	drawWorld();
+	
 
 	// THIS IS ANOTHER WAY I TRIED FUNCTIONS BUT LAG
 
@@ -279,4 +301,3 @@ document.onkeydown = function(e){
 	// 		map[rick.x] = 23;
 	// 	}
 	// }
-	drawWorld();
