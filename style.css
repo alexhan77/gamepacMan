@@ -67,18 +67,21 @@ body {
     padding: 3em;
 }
 h2 {
-    color: white;
+    color: red;
 }
 .score {
     padding: 2em;
-    color: peachpuff;
+    color: red;
     text-align: center;
+    font-size: 2em;
 }
 .rickScore {
-    text-align: center;
+    text-align: blue;
     color: peachpuff;
+    size: 25%;
 }
 .mortyScore {
-    color: peachpuff;
+    color: red;
     text-align: center;
+    size: 25%;
 }
