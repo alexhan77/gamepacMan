@@ -117,12 +117,12 @@ document.onkeydown = function(e){
 				map[rick.y][rick.x] = 5;
 				if	(map[rick.y][rick.x+1] == 2){
 					rickScore++
-					console.log('score',rickScore)
+					// console.log('score',rickScore)
 				// drawWorld();
 			}
 			else if (map[rick.y][rick.x+1] == 7){
 				rickScore += 10
-				console.log('score',rickScore)
+				// console.log('score',rickScore)
 			}
 			}
 		}
@@ -182,7 +182,13 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.x = evilMorty.x + 1;
 					map[evilMorty.y][evilMorty.x] = 4;
+				if	(map[evilMorty.y+1][evilMorty.x] == 2){
+						mortyScore++
 					// drawWorld();
+				}
+				else if (map[evilMorty.y][evilMorty.x+1] == 7){
+						mortyScore += 10
+					// console.log('score',evilMortyScore)
 				}
 				// console.log('right')
 			}
@@ -193,7 +199,14 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.x = evilMorty.x - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
+					if	(map[evilMorty.y+1][evilMorty.x] == 2){
+						mortyScore++
 					// drawWorld();
+				}
+				else if (map[evilMorty.y][evilMorty.x-1] == 7){
+						mortyScore += 10
+					// console.log('score',evilMortyScore)
+				}
 				}
 				// console.log('left')
 			}
@@ -207,7 +220,14 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.y = evilMorty.y - 1;
 					map[evilMorty.y][evilMorty.x] = 4;
+				if	(map[evilMorty.y+1][evilMorty.x] == 2){
+						mortyScore++
 					// drawWorld();
+				}
+				else if (map[evilMorty.y-1][evilMorty.x] == 7){
+						mortyScore += 10
+					// console.log('score',evilMortyScore)
+				}
 				}
 				
 				// console.log('up')
@@ -218,13 +238,21 @@ document.onkeydown = function(e){
 					map[evilMorty.y][evilMorty.x] = 3;
 					evilMorty.y = evilMorty.y + 1;
 					map[evilMorty.y][evilMorty.x] = 4;
+				if	(map[evilMorty.y+1][evilMorty.x] == 2){
+						mortyScore++
 					// drawWorld();
 				}
+				else if (map[evilMorty.y+1][evilMorty.x] == 7){
+						mortyScore += 10
+					// console.log('score',evilMortyScore)
+				}
+				}
+				document.getElementById('mortyScore').innerHTML = mortyScore
 				// console.log('down')
 			}
 			drawWorld();
 		}
-
+	}
 	}
 
 	// THIS IS ANOTHER WAY I TRIED FUNCTIONS BUT LAG
