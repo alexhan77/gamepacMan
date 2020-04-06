@@ -72,4 +72,9 @@ h2 {
 .score {
     padding: 2em;
     color: peachpuff;
+    text-align: center;
+}
+.rickScore {
+    text-align: center;
+    color: peachpuff;
 }

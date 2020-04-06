@@ -10,7 +10,7 @@
     
 	// var currentRick = rick
 	var rickScore = 0
-	
+	var mortyScore = 0
 	// Where Rick starts
 	rick = {
 		x: 12,
@@ -117,12 +117,12 @@ document.onkeydown = function(e){
 				map[rick.y][rick.x] = 5;
 				if	(map[rick.y][rick.x+1] == 2){
 					rickScore++
-					// console.log('score',rickScore)
+					console.log('score',rickScore)
 				// drawWorld();
 			}
 			else if (map[rick.y][rick.x+1] == 7){
 				rickScore += 10
-				// console.log('score',rickScore)
+				console.log('score',rickScore)
 			}
 			}
 		}
@@ -160,8 +160,9 @@ document.onkeydown = function(e){
 				// console.log('score',rickScore)
 			}
 			}
-	
+			document.getElementById('rickScore').innerHTML = rickScore
 		// Finding cordinates in console
+		
 		console.log('rick coordinates'+ rick.y +''+ rick.x)
 		
 		}
@@ -225,6 +226,8 @@ document.onkeydown = function(e){
 		}
 
 	}
+
+	// THIS IS ANOTHER WAY I TRIED FUNCTIONS BUT LAG
 
 	// game over function 
 	// function rickScore 
