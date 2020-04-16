@@ -101,9 +101,10 @@ function drawWorld() {
 		el.innerHTML += "<br>";
 	}
 }
+// 1st execution of drawWorld
 drawWorld();
-// RICKS MOVEMENTS
 
+// RICKS MOVEMENTS
 document.onkeydown = function (e) {
 	e.preventDefault()
 	console.log('i am moving')
